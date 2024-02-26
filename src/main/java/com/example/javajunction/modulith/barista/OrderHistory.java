@@ -13,7 +13,8 @@ public class OrderHistory {
 
     @ApplicationModuleListener
     void on(Order order) {
-        log.info("new order: {}", order);
+        var message = String.format("\nCustomer: %s\n\t%d coffee(s)\n\t%d latte(s)", order.customerName(), order.coffeeCount(), order.latteCount());
+        log.info(message);
     }
 
 }
